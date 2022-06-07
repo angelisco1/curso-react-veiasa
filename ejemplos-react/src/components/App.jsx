@@ -1,5 +1,4 @@
 
-import CmpComponentes from './01-componentes/CmpComponentes';
 // const App = () => {
 //   return jsx(
 //     'div',
@@ -14,11 +13,18 @@ import CmpComponentes from './01-componentes/CmpComponentes';
 //   )
 // }
 
+import CmpUseEffect from "./06-useEffect/CmpUseEffect"
+
 const App = () => {
   return (
     <div>
       <h1>Curso de React</h1>
-      <CmpComponentes />
+      {/* <CmpComponentes /> */}
+      {/* <CmpPropiedades /> */}
+      {/* <CmpCondicionalYListas /> */}
+      {/* <CmpEventos /> */}
+      {/* <CmpEstados /> */}
+      <CmpUseEffect />
     </div>
   )
 }
