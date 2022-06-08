@@ -13,7 +13,7 @@
 //   )
 // }
 
-import CmpUseEffect from "./06-useEffect/CmpUseEffect"
+import CmpUseRef from "./08-useRef/CmpUseRef"
 
 const App = () => {
   return (
@@ -24,7 +24,9 @@ const App = () => {
       {/* <CmpCondicionalYListas /> */}
       {/* <CmpEventos /> */}
       {/* <CmpEstados /> */}
-      <CmpUseEffect />
+      {/* <CmpUseEffect /> */}
+      {/* <CmpFormularios /> */}
+      <CmpUseRef />
     </div>
   )
 }

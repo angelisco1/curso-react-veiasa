@@ -22,6 +22,11 @@ module.exports = {
         test: /\.css$/,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(mp4)/,
+        exclude: /node_modules/,
+        type: "asset/resource"
       }
     ]
   },
