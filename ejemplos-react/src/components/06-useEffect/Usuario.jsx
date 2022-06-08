@@ -1,10 +1,11 @@
 const Usuario = (props) => {
-  const {name, username, email} = props.usuario
+  const {name, username, email, id} = props.usuario
 
   return (
     <div>
-      <p>{name} ({username})</p>
+      <p>{id} - {name} ({username})</p>
       <p>Email: {email}</p>
+      <button>Ver + info</button>
     </div>
   )
 }
