@@ -3,6 +3,12 @@ const getUsuariosFiltrados = (filtro) => {
     .then(resp => resp.json())
 }
 
+const getUsuarioById = (id) => {
+  return fetch('http://localhost:3000/usuarios/' + id)
+    .then(resp => resp.json())
+}
+
 export default {
-  getUsuariosFiltrados
+  getUsuariosFiltrados,
+  getUsuarioById
 }

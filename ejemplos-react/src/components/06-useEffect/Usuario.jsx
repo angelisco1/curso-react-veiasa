@@ -1,11 +1,11 @@
-const Usuario = (props) => {
-  const {name, username, email, id} = props.usuario
+const Usuario = ({usuario, setId}) => {
+  const {name, username, email, id} = usuario
 
   return (
     <div>
       <p>{id} - {name} ({username})</p>
       <p>Email: {email}</p>
-      <button>Ver + info</button>
+      <button type="button" onClick={() => setId(id)}>Ver + info</button>
     </div>
   )
 }

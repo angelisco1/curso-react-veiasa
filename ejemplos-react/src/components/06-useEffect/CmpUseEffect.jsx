@@ -8,6 +8,9 @@ const CmpUseEffect = () => {
   const [usuarios, setUsuarios] = useState([])
   const [filtro, setFiltro] = useState('')
 
+  const [idSeleccionado, setIdSeleccionado] = useState(null)
+  const [infoUsuario, setInfoUsuario] = useState(null)
+
   useEffect(() => {
     UsuariosService.getUsuariosFiltrados(filtro)
       .then(listaUsuarios => {
@@ -25,6 +28,16 @@ const CmpUseEffect = () => {
     document.title = 'Usuarios con: ' + filtro
   }, [filtro])
 
+  useEffect(() => {
+    if (idSeleccionado) {
+      UsuariosService.getUsuarioById(idSeleccionado)
+        .then(usuario => {
+          setInfoUsuario(usuario)
+        })
+    }
+  }, [idSeleccionado])
+
+
   console.log('render', filtro)
 
   return (
@@ -35,11 +48,11 @@ const CmpUseEffect = () => {
       <br />
 
       <input type="text" value={filtro} onChange={(e) => setFiltro(e.target.value)} />
-      {usuarios.map(usuario => <Usuario key={usuario.id} usuario={usuario} />)}
+      {usuarios.map(usuario => <Usuario key={usuario.id} usuario={usuario} setId={setIdSeleccionado} />)}
 
       <hr />
       <h3>Usuario seleccionado</h3>
-      <pre>{JSON.stringify(usuarios[3], null, 2)}</pre>
+      <pre>{JSON.stringify(infoUsuario, null, 2)}</pre>
 
     </div>
   )
