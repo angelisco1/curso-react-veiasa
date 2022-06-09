@@ -1,23 +1,11 @@
 
 // const App = () => {
-//   return jsx(
-//     'div',
-//     {
-//       children: jsx(
-//         'h1',
-//         {
-//           children: 'Curso de React sin JSX'
-//         }
-//       )
-//     }
-//   )
-// }
 
-import CmpUseRef from "./08-useRef/CmpUseRef"
+import CmpSuspense from "./12-suspense/CmpSuspense"
 
 const App = () => {
   return (
-    <div>
+    <>
       <h1>Curso de React</h1>
       {/* <CmpComponentes /> */}
       {/* <CmpPropiedades /> */}
@@ -26,8 +14,12 @@ const App = () => {
       {/* <CmpEstados /> */}
       {/* <CmpUseEffect /> */}
       {/* <CmpFormularios /> */}
-      <CmpUseRef />
-    </div>
+      {/* <CmpUseRef /> */}
+      {/* <CmpUseContext /> */}
+      {/* <CmpUseReducer /> */}
+      {/* <CmpChildren /> */}
+      <CmpSuspense />
+    </>
   )
 }
 

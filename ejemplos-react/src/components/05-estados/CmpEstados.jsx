@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import CvForm from "./CvForm"
 import CvPreview from "./CvPreview"
 
@@ -16,6 +16,11 @@ const CmpEstados = () => {
   //   isLoggedIn: false,
   //   listaSugus: []
   // })
+
+  const nombreCompleto = useMemo(() => {
+    console.log('Pasa por el memo')
+    return nombre + ' ' + apellidos
+  }, [nombre, apellidos])
 
   return (
     <div>
@@ -40,7 +45,7 @@ const CmpEstados = () => {
           setApellidos={setApellidos}
           setEmail={setEmail}
         />
-        <CvPreview nombre={nombre} apellidos={apellidos} email={email} />
+        <CvPreview nombreCompleto={nombreCompleto} email={email} />
       </div>
 
     </div>
