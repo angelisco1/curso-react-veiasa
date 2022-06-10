@@ -1,4 +1,30 @@
 {
+  "vendehumos": [
+    {
+      "id": 1,
+      "nombre": "Vendehumo 1",
+      "descripcion": "Aprende inglés con el traductor de Obama",
+      "votos": 3
+    },
+    {
+      "id": 2,
+      "nombre": "Vendehumo 2",
+      "descripcion": "Se tu propio jefe y hazte rico",
+      "votos": 32
+    },
+    {
+      "id": 3,
+      "nombre": "Vendehumo 3",
+      "descripcion": "Compra este NFT",
+      "votos": 15
+    },
+    {
+      "id": 4,
+      "nombre": "Vendehumo 4",
+      "descripcion": "Hazte mi curso de trading y mañana serás millonario",
+      "votos": 45
+    }
+  ],
   "usuarios": [
     {
       "id": 1,

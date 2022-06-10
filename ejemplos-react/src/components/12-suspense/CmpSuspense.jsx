@@ -1,6 +1,9 @@
-import { Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
+import { SpinnerDotted } from 'spinners-react';
 import ProductosService from '../../services/productos.service';
-import ProcesoPago from './ProcesoPago';
+
+// import ProcesoPago from './ProcesoPago';
+const ProcesoPago = lazy(() => import('./ProcesoPago'))
 
 const CmpSuspense = () => {
   const [mostrarProcesoPago, setMostrarProcesoPago] = useState(false)
@@ -34,9 +37,10 @@ const CmpSuspense = () => {
         })}
       </ul>
 
-      <Suspense>
+      {/* {listaCompra.length > 0 && <Suspense fallback={<Loading />}> */}
+      {listaCompra.length > 0 && <Suspense fallback={<SpinnerDotted />}>
         <ProcesoPago />
-      </Suspense>
+      </Suspense>}
 
     </div>
   )

@@ -1,7 +1,7 @@
 
 // const App = () => {
 
-import CmpSuspense from "./12-suspense/CmpSuspense"
+import CmpRouting from "./13-react-router/CmpRouting"
 
 const App = () => {
   return (
@@ -18,7 +18,8 @@ const App = () => {
       {/* <CmpUseContext /> */}
       {/* <CmpUseReducer /> */}
       {/* <CmpChildren /> */}
-      <CmpSuspense />
+      {/* <CmpSuspense /> */}
+      <CmpRouting />
     </>
   )
 }

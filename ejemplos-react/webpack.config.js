@@ -37,7 +37,8 @@ module.exports = {
     })
   ],
   devServer: {
-    static: outputPath
+    static: outputPath,
+    historyApiFallback: true
   },
   resolve: {
     extensions: ['.js', '.jsx']
