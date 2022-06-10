@@ -1,16 +1,21 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { Outlet, useSearchParams } from 'react-router-dom'
-import VendehumosService from '../../services/vendehumos.service'
 import Vendehumo from './Vendehumo'
 
 const ListaVendehumos = () => {
   const [qParams, setQParams] = useSearchParams()
-  const [vendehumos, setVendehumos] = useState([])
+  const vendehumos = useSelector(state => {
+    console.log(state)
+    return state.vendehumosReducer.vendehumos
+  })
+  // const [vendehumos, setVendehumos] = useState([])
+
 
   useEffect(() => {
     const filtro = qParams.get('votos') || null
-    VendehumosService.getVendehumos(filtro)
-      .then(datos => setVendehumos(datos))
+    // VendehumosService.getVendehumos(filtro)
+    //   .then(datos => setVendehumos(datos))
   }, [qParams])
 
   return (

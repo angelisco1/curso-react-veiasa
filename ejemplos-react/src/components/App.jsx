@@ -1,7 +1,9 @@
 
+import { GithubIcon } from '../../../libreria-iconos/dist';
 // const App = () => {
 
-import CmpRouting from "./13-react-router/CmpRouting"
+
+
 
 const App = () => {
   return (
@@ -19,7 +21,8 @@ const App = () => {
       {/* <CmpUseReducer /> */}
       {/* <CmpChildren /> */}
       {/* <CmpSuspense /> */}
-      <CmpRouting />
+      {/* <CmpRouting /> */}
+      <GithubIcon />
     </>
   )
 }

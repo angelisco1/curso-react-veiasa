@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link, Navigate, Route, Routes } from 'react-router-dom'
 import { delToken, getToken, setToken } from '../../services/auth.service'
+import VendehumosService from '../../services/vendehumos.service'
+import { inicializarVendehumos } from '../../store/vendehumos/actions'
 import Error from './Error'
 import InfoVendehumo from './InfoVendehumo'
 import ListaVendehumos from './ListaVendehumos'
@@ -14,6 +17,15 @@ const handleClickLogin = (setIsLoggedIn) => {
 
 const CmpRouting = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    VendehumosService.getVendehumos()
+      .then(datos => {
+        const action = inicializarVendehumos(datos)
+        dispatch(action)
+      })
+  }, [])
 
   useEffect(() => {
     const token = getToken()
